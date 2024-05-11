@@ -52,7 +52,7 @@ const studentSchema = mongoose.Schema(
                 url : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFJHtLNj7M2GqTtcijfgVGjSK5BWMLlI1Q8pPYNc6G6ZYMQyXUiPWQhK19MtmGh6A6POM&usqp=CAU'
             }
         },
-
+        skills : String,
         resume : {
             education : [],
             jobs : [],

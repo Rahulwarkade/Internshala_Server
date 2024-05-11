@@ -192,5 +192,15 @@ exports.readjob = catchAsyncErrors(async (req,res,next)=>{
 
     if(!job) return next(new ErrorHandler("job not found",404));
 
-    res.json({job})
+    res.json({job});
 })
+
+exports.matchedjob = catchAsyncErrors(async (req,res,next)=>{
+    const student = await studentModel.findById(req.params.id).exec();
+    const searchskill = student.skills;
+    
+    const regex = new RegExp(`${searchskill}`,'i');
+    const jobs = await jobModel.find({skill : regex});
+
+    res.json({jobs})
+}) 

@@ -17,6 +17,7 @@ const {
     alljobs,
     readinternship,
     readjob,
+    matchedjob,
  } = require('../controllers/indexControllers.js');
 
  const { isAuthenticated } = require("../middlewares/auth.js");
@@ -78,5 +79,7 @@ router.post("/student/apply/job/:jobid",isAuthenticated,applyjob);
 
 //POST  /alljobs
 router.post("/alljobs/",alljobs);
+
+router.post("/student/matchedjob/:id",matchedjob);
 
 module.exports = router;
